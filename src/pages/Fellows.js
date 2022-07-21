@@ -4,7 +4,7 @@ import { Card, CardBody, CardTitle, CardHeader, Row, Col } from 'reactstrap';
 import Banner from "../components/Banner";
 import {Helmet} from "react-helmet";
 
-export default function Speakers (){
+export default function Fellows (){
     const [post, getPost] = useState([]);
     const speakerAPI = 'https://mediafest22.org/wp-json/wp/v2/posts';
 
@@ -46,6 +46,13 @@ export default function Speakers (){
                     </CardBody>
                 </Card>);
             })}
+
+                    <Helmet>
+                        <meta charSet="utf-8" />
+                        <title>MediaFest22 | Presenters</title>
+                        <meta property="og:description" content="" />
+                        <meta name="description" content="" />
+                    </Helmet>
            
         
     </div>
