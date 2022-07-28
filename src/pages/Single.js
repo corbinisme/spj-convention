@@ -19,12 +19,21 @@ class Single extends React.Component {
 
     state = {
        page: this.props.page,
+       navopen: false
     }
 
 
 
-    handleUpdate = (newtext) => {
-        this.setState({ page: newtext })
+    handleUpdate = (newtext, isNav) => {
+        this.setState({ page: newtext });
+
+        if((newtext=="home" && this.state.navopen==true) || isNav==null){
+            this.setState({ navopen: false })
+        } else {
+          
+            this.setState({ navopen: !this.state.navopen })
+        }
+        
     }
 
     
@@ -47,7 +56,7 @@ class Single extends React.Component {
         
             return (
                 <>
-                <HeaderSpa page={this.state.page} updateState={this.handleUpdate} />
+                <HeaderSpa navopen={this.state.navopen} page={this.state.page} updateState={this.handleUpdate} />
                 <div className="wrapper">
                     <Comp updateState={this.handleUpdate} lookup={componentLookup} page={this.state.page} />
                 </div>

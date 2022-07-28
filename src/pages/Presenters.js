@@ -34,26 +34,30 @@ A moderated panel discussion will follow.</p>
         </div>
             
             {post.map((item) => {
-                return (<Card key={item.id} className="mb-4">
+                return (<Card key={item.id} className="mb-4 presenter_card">
                    
                     <CardBody >
-                <Row>
-                    <Col sm={3}>
-                    <img src={item.qubely_featured_image_url.medium[0]}  alt={item.title.rendered}/>
-                        
-                    </Col>
-                    <Col sm={9}>
-                    <h3>{item.title.rendered}</h3>
-                        <div dangerouslySetInnerHTML={{__html: item.content.rendered}} />
+                    <Row>
+                        <Col sm={3}>
+                        <img src={item.qubely_featured_image_url.medium[0]}  alt={item.title.rendered}/>
+                            
+                        </Col>
+                        <Col sm={9}>
+                        <h3>{item.title.rendered}</h3>
+                            <div dangerouslySetInnerHTML={{__html: item.content.rendered}} />
 
-                    </Col>
-                </Row>
+                        </Col>
+                    </Row>
                        
                     </CardBody>
                 </Card>);
             })}
            
-        
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>MediaFest22 | Presenters</title>
+                
+            </Helmet>
     </div>
     );
 }

@@ -5,7 +5,8 @@ import Socialicons from './Socialicons';
 export default function Footer(){
 
     return(
-        <div className="bg-dark  text-light text-center">
+        <footer>
+            <div className="bg-dark  text-light text-center">
              <img src="https://mediafest22.org/wp-content/uploads/2022/01/MediaFest22_White_Horiz.svg" alt="mediafest22" width="60%" />
                
           <p>Society of Professional Journalists</p>
@@ -15,5 +16,6 @@ export default function Footer(){
            
         <Socialicons />
         </div>
+        </footer>
     )
 }
