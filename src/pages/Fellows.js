@@ -2,11 +2,11 @@ import {useState,useEffect} from "react";
 import axios from "axios";
 import { Card, CardBody, CardTitle, CardHeader, Row, Col } from 'reactstrap';
 import Banner from "../components/Banner";
-import {Helmet} from "react-helmet";
+
 
 export default function Fellows (){
     const [post, getPost] = useState([]);
-    const speakerAPI = 'https://mediafest22.org/wp-json/wp/v2/posts';
+    const speakerAPI = 'https://mediafest22.org/wp-json/wp/v2/posts?_embed&per_page=100';
 
     useEffect(() => {
         axios.get(speakerAPI)
@@ -47,12 +47,7 @@ export default function Fellows (){
                 </Card>);
             })}
 
-                    <Helmet>
-                        <meta charSet="utf-8" />
-                        <title>MediaFest22 | Presenters</title>
-                        <meta property="og:description" content="" />
-                        <meta name="description" content="" />
-                    </Helmet>
+                   
            
         
     </div>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState,useEffect} from "react";
 import ScrollToTop from "react-scroll-to-top";
 import Home from './Home';
 import Fellows from './Fellows';
@@ -67,4 +67,49 @@ class Single extends React.Component {
         }
 }
 
-export default Single;
+function Single2(props){
+
+    const [page, setPage] = useState(props.page);
+    const [navopen, setNavopen] = useState();
+    
+
+
+    const handleUpdate = function(newtext, isNav)  {
+        
+        setPage(newtext)
+        if((newtext=="home" && navopen==true) || isNav==null){
+            setNavopen(false)
+        } else {
+            setNavopen(!navopen)
+            
+        }
+        
+    }
+
+    const componentLookup = {
+        home: Home,
+        fellows: Fellows,
+        registration: Registration,
+        covid: Covid,
+        travel: Travel,
+        schedule: Schedule,
+        presenters: Presenters
+    }
+
+    const Comp = componentLookup[page.toLowerCase()];
+
+    
+        return (
+            <>
+            <HeaderSpa navopen={navopen} page={page} updateState={handleUpdate} />
+            <div className="wrapper">
+                <Comp updateState={handleUpdate} lookup={componentLookup} page={page} />
+            </div>
+            <ScrollToTop smooth />
+            <Footer />
+        </>
+        );
+}
+
+
+export default Single2;

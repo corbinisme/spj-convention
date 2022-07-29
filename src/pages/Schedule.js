@@ -2,7 +2,7 @@ import {useState,useEffect} from "react";
 import axios from "axios";
 import { Card, CardBody, CardTitle, CardHeader } from 'reactstrap';
 import Banner from "../components/Banner";
-import {Helmet} from "react-helmet";
+import {Helmet} from "react-helmet-async";
 
 export default function Speakers (props){
     const [post, getPost] = useState([]);
@@ -31,12 +31,7 @@ export default function Speakers (props){
                     <div dangerouslySetInnerHTML={{__html: item.content.rendered}}>
 
                     </div>
-                    <Helmet>
-                        <meta charSet="utf-8" />
-                        <title>MediaFest22 | {item.title.rendered}</title>
-                        <meta property="og:description" content={item.yoast_head_json.og_description} />
-                        <meta name="description" content={item.yoast_head_json.og_description} />
-                    </Helmet>
+                    
                 </div>
                 )
             })}
