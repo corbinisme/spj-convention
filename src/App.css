@@ -31,6 +31,14 @@ header .navbar-light {
 h1, h3, h3 {
   text-transform: uppercase;
 }
+
+.session_highlights img {
+  width: 100%;
+  height: auto;
+}
+.highlight_row {
+  margin-bottom: 3em;
+}
 @media all and (max-width: 503px){
   .navbar-expand-md .container-md {
     display: flex!important;
