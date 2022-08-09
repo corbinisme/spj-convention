@@ -2,7 +2,7 @@ import {useState,useEffect} from "react";
 import axios from "axios";
 import { Card, CardBody, CardTitle, CardHeader, Row, Col } from 'reactstrap';
 import Banner from "../components/Banner";
-
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 export default function Fellows (){
     const [post, getPost] = useState([]);
@@ -44,6 +44,14 @@ export default function Fellows (){
                 </Row>
                        
                     </CardBody>
+                    
+                    <HelmetProvider>
+                        <Helmet>
+                            <title>2022 Fellows - MediaFest22</title>
+                            
+                        </Helmet>
+
+                    </HelmetProvider>
                 </Card>);
             })}
 

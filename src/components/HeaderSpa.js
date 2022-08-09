@@ -42,6 +42,8 @@ class HeaderSpa extends React.Component{
                     Schedule
                     </NavLink>
                 </NavItem>
+               
+               
 
                 <NavItem>
                     <NavLink className={(this.props.page=='registration'?"active":"")

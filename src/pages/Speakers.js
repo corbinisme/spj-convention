@@ -2,7 +2,7 @@ import {useState,useEffect} from "react";
 import axios from "axios";
 import { Card, CardBody, CardTitle, CardHeader, Row, Col } from 'reactstrap';
 import Banner from "../components/Banner";
-import {Helmet} from "react-helmet";
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 export default function Speakers (){
     const [post, getPost] = useState([]);
@@ -31,19 +31,28 @@ export default function Speakers (){
                 return (<Card key={item.id} className="mb-4">
                    
                     <CardBody >
-                <Row>
-                    <Col sm={3}>
-                    <img src={item.qubely_featured_image_url.medium[0]}  alt={item.title.rendered}/>
-                        
-                    </Col>
-                    <Col sm={9}>
-                    <h3>{item.title.rendered}</h3>
-                        <div dangerouslySetInnerHTML={{__html: item.excerpt.rendered}} />
+                        <Row>
+                            <Col sm={3}>
+                            <img src={item.qubely_featured_image_url.medium[0]}  alt={item.title.rendered}/>
+                                
+                            </Col>
+                            <Col sm={9}>
+                            <h3>{item.title.rendered}</h3>
+                                <div dangerouslySetInnerHTML={{__html: item.excerpt.rendered}} />
 
-                    </Col>
-                </Row>
-                       
+                            </Col>
+                        </Row>
+                            
                     </CardBody>
+
+
+                    <HelmetProvider>
+                        <Helmet>
+                            <title>2022 Fellows - MediaFest22</title>
+                            
+                        </Helmet>
+
+                    </HelmetProvider>
                 </Card>);
             })}
            

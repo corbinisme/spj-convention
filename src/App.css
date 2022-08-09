@@ -566,3 +566,40 @@ body .styles_scroll-to-top__2A70v {
 .presenter_card .wp-block-image {
   display: none;
 }
+
+
+.session-list {
+  text-align: left;
+}
+.session_item .content.hidden{
+  display: none;
+}
+
+.session_item, .sessions h3  {
+  border-bottom: 2px solid #333;
+}
+
+.breakout img {
+  width: 100%;
+}
+
+.alignfull {
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: calc(50% - 50vw);
+}
+.session_section .swiper-slide {
+  padding: 0 4em;
+}
+.session_section .presenter  {
+  font-weight: bold;
+}
+.session_section .presenter ul {
+  margin: 0;
+}
+
+.highlight_row img {
+  float: left;
+  width: 200px;
+  margin-right: 10px;
+}

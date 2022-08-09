@@ -9,12 +9,12 @@ export default function Presenters (){
     const speakerAPI = 'https://mediafest22.org/wp-json/wp/v2/posts?_embed&per_page=100';
 
     useEffect(() => {
-        console.log("loading")
+
         axios.get(speakerAPI)
           .then((response) => {
-            console.log("resp", response)
+
             let filters = response.data.filter(function(t){return t.categories.includes(22)})
-            console.log(filters)
+
             getPost(filters);
             window.scrollTo(0, 0);
             });
