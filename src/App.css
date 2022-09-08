@@ -603,3 +603,46 @@ body .styles_scroll-to-top__2A70v {
   width: 200px;
   margin-right: 10px;
 }
+
+.featuredPrecon .inner {
+  margin: 2em auto;
+  max-width: 800px;
+  padding: 2em;
+  background-color: #eee;
+}
+.featuredPrecon .inner img {
+  max-width: 100%;
+}
+
+.featuredPrecon .inner h2 {
+  font-size: 1.5em;
+  color: #333;
+}
+
+.backbar {
+  background-color: #000;
+  color: #fff;
+  padding: 5px 10px;
+}
+.backbar a {
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+}
+.backbar a:hover {
+  color: #ccc;
+}
+
+.fellowEntry h2 {
+  font-size: 1em;
+  color: #222;
+  text-align: left;
+  font-weight: normal;
+}
+
+
+.shopspj {
+  background-image: url("https://shop-spj.myspreadshop.com/101119712/shopData/images/teaser/Shop-SPJ_Header_11120x400_Gradient_fune1d.svg");
+  background-size: cover;
+  min-height: 450px;
+}

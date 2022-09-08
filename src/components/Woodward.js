@@ -4,7 +4,7 @@ import { Card, CardBody, CardTitle, CardHeader, Row, Col } from 'reactstrap';
 import Banner from "../components/Banner";
 
 
-export default function Presenters (){
+export default function Woodward (){
     const [post, getPost] = useState([]);
     const speakerAPI = 'https://mediafest22.org/wp-json/wp/v2/posts?_embed&per_page=100';
 
@@ -13,7 +13,7 @@ export default function Presenters (){
         axios.get(speakerAPI)
           .then((response) => {
 
-            let filters = response.data.filter(function(t){return t.categories.includes(22)})
+            let filters = response.data.filter(function(t){return t.categories.includes(30)})
 
             getPost(filters);
             window.scrollTo(0, 0);
@@ -22,20 +22,10 @@ export default function Presenters (){
       
 
     return (
-    <div className="presenters"> 
-    <br />
-    <h3>Thursday, Oct. 27</h3>
-    <Card>
-        <CardBody>
+    <div className="presenters woodward"> 
 
-       
-            
-                <div><p>
-                        For this keynote, each guest will speak individually in a 10-minute TED Talk format
-                on how journalism can better serve the communities they cover.
-                <br />
-                A moderated panel discussion will follow.</p>
-                </div>
+        <h3>Friday, Oct. 28</h3>
+
 
             {post.map((item) => {
                 return (<Card key={item.id} className="mb-4 presenter_card">
@@ -56,8 +46,7 @@ export default function Presenters (){
                 </Card>);
             })}
            
-           </CardBody>
-    </Card>
+           
     </div>
     );
 }

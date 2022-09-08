@@ -4,6 +4,9 @@ import Hero from "../components/Hero";
 import Homepage from "../components/Homepage";
 import Welcometext from "../components/Welcometext";
 import Presenter from "../components/Presenter";
+import Featured from "../components/Featured";
+import Register from "../components/Register"
+import Shop from "../components/Shop";
 import axios from "axios";
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -116,7 +119,16 @@ export default function Home (props){
             </div>
             </section>
 
+      
+            <Featured />
+
             <hr className="star" />
+
+                <h2>Pricing</h2>
+            <Register />
+            <hr className="star" />
+
+            <Shop />
             
            
 

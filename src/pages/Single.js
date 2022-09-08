@@ -1,4 +1,13 @@
 import React, {useState,useEffect} from "react";
+import {
+    Routes, 
+    Route, 
+    Link,
+    useLocation,
+    useNavigate,
+    useParams,
+    BrowserRouter,
+  } from "react-router-dom";
 import ScrollToTop from "react-scroll-to-top";
 import Home from './Home';
 import Fellows from './Fellows';
@@ -23,6 +32,7 @@ class Single extends React.Component {
        navopen: false
     }
 
+    
 
 
     handleUpdate = (newtext, isNav) => {
@@ -57,24 +67,33 @@ class Single extends React.Component {
 
         
             return (
-                <>
+                <div className="wrapper">
+                    
                 <HeaderSpa navopen={this.state.navopen} page={this.state.page} updateState={this.handleUpdate} />
                 <div className="wrapper">
                     <Comp updateState={this.handleUpdate} lookup={componentLookup} page={this.state.page} />
                 </div>
                 <ScrollToTop smooth />
                 <Footer />
-            </>
+            </div>
             );
         }
 }
 
 function Single2(props){
 
-    const [page, setPage] = useState(props.page);
+    const searchParam = window.location.search;
+    let st = window.localStorage;
+    let isForcedParam = st.getItem("forceUrl");
+    let pageProp =(searchParam? searchParam.substring(searchParam.indexOf("=")+1, searchParam.length): "home");
+    
+    if(isForcedParam!=""|| isForcedParam==null){
+        st.setItem("forceUrl", searchParam)
+    }
+    const [page, setPage] = useState((pageProp? pageProp: "home"));
     const [navopen, setNavopen] = useState();
     
-
+    
 
     const handleUpdate = function(newtext, isNav)  {
         

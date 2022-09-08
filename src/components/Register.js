@@ -1,8 +1,5 @@
 import {useState,useEffect} from "react";
 import axios from "axios";
-import Banner from "../components/Banner";
-import { Helmet, HelmetProvider } from 'react-helmet-async';
-import Register from "../components/Register"
 
 export default function Registration (props){
     const [post, getPost] = useState([]);
@@ -16,7 +13,6 @@ export default function Registration (props){
             let filters = response.data.filter((t=>t.slug == "registration"))
 
             getPost(filters);
-            window.scrollTo(0, 0);
 
             });
         }, []);
@@ -24,8 +20,16 @@ export default function Registration (props){
 
     return (
         <div className="container"> 
-            <Banner title="Registration" />
-            <Register />
+           
+            {post.map((item) => {
+                return (<div key={item.id}>
+                    <div dangerouslySetInnerHTML={{__html: item.content.rendered}}>
+
+                    </div>
+
+                </div>
+                )
+            })}
             
         </div>
     );

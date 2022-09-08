@@ -13,6 +13,9 @@ class HeaderSpa extends React.Component{
         return(
         <>
         <header>
+            <aside className="backbar">
+                <a href="https://spj.org">Back to SPJ.org</a>
+            </aside>
         <Navbar
             color="dark"
             dark
@@ -43,6 +46,15 @@ class HeaderSpa extends React.Component{
                     </NavLink>
                 </NavItem>
                
+                <NavItem style={{display: "none"}}>
+                    <NavLink className={(this.props.page=='sessions'?"active":"")}
+                            onClick={() => this.props
+                            .updateState('sessions',true)}>
+                    Sessions
+                    </NavLink>
+                </NavItem>
+
+               
                
 
                 <NavItem>
@@ -66,14 +78,7 @@ class HeaderSpa extends React.Component{
                     </NavLink>
                 </NavItem>
 
-                <NavItem>
-                    <NavLink className={(this.props.page=='fellows'?"active":"")} 
-                            onClick={() => this.props
-                            .updateState('fellows',true)}>
-                        
-                        <span>2022</span> Fellows
-                    </NavLink>
-                </NavItem>
+             
 
                
 
