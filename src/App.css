@@ -646,3 +646,35 @@ body .styles_scroll-to-top__2A70v {
   background-size: cover;
   min-height: 450px;
 }
+
+
+a.qubely-block-btn-anchor, a.qubely-block-btn-anchor:link{
+  display: inline-block;
+  padding: 0.5em 1.2em;
+  font-size: 1.5em;
+  border-radius: .2em;
+  text-decoration: none;
+  color: #fff;
+}
+.qubely-block-btn-anchor:hover {
+  color: #eee;
+}
+
+
+.page-id-308 .breakout_list
+.page-id-308 .breakout_list {
+  text-align: left;
+}
+.page-id-308 .breakout_list>li {
+  list-style: none;
+
+}
+.page-id-308 .breakout_list>li li {
+  list-style: disc;
+  text-align: left;
+  margin-bottom:1em;
+  font-size: 1.2em;
+}
+.page-id-308 .breakout_list>li>a {
+  display: none;
+}

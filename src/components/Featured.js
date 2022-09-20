@@ -3,7 +3,7 @@ import axios from "axios";
 
 export default function Featured (props){
     const [post, getPost] = useState([]);
-    const scheduleAPI = 'https://mediafest22.org/wp-json/wp/v2/posts?_embed&per_page=100';
+    const scheduleAPI = 'https://mediafest22.org/wp-json/wp/v2/posts?_embed&per_page=100&filter[orderby]=created&order=asc';
     
     
     useEffect(() => {

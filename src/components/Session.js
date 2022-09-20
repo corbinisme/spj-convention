@@ -24,7 +24,11 @@ function Session(props){
         endAMPM = "PM";
     }
     let title= props.content.title.rendered.replace('&#038;', ' - ');
+    title = title.replace("&#8211;", " - ");
+    title = title.replace("&#8217;", "'");
 
+    let sessionTags = (props.content.tags.length>0? props.content.tags[0]: null)
+    console.log("session tags", sessionTags)
     const toggleOpen = function(e){
         e.preventDefault();
 
@@ -52,6 +56,7 @@ function Session(props){
                 <div 
                     className={`col-sm-12 content bg-light p-4 ${visibleClass}`}>
                     <Breakouts open={open} content={props.content} />
+                    
                 </div>
 
 

@@ -19,7 +19,7 @@ import 'swiper/css/pagination';
 export default function Home (props){
    
     const [post, getPost] = useState([]);
-    const scheduleAPI = 'https://mediafest22.org/wp-json/wp/v2/posts?_embed&per_page=100';
+    const scheduleAPI = 'https://mediafest22.org/wp-json/wp/v2/posts?_embed&per_page=100&filter[orderby]=created&order=asc';
     
     
     useEffect(() => {
@@ -92,6 +92,8 @@ export default function Home (props){
 
                     let title = item.title.rendered;
                     title = title.replace('&#038;','-')
+                    title = title.replace("&#8211;", " - ");
+                     title = title.replace("&#8217;", "'");
                     return (
                         <SwiperSlide key={item.id} className="highlight_row">
                             <h3>{title} </h3>

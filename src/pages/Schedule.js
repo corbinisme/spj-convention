@@ -2,6 +2,7 @@ import {useState,useEffect} from "react";
 import axios from "axios";
 import Banner from "../components/Banner";
 import { Helmet, HelmetProvider } from 'react-helmet-async';
+import Sponsors from "../components/Sponsors";
 
 export default function Speakers (props){
     const [post, getPost] = useState([]);
@@ -45,6 +46,7 @@ export default function Speakers (props){
                 )
             })}
             </div>
+        
             
         </div>
     );

@@ -14,6 +14,7 @@ function Breakouts(props){
     const [breakouts, getBreakouts] = useState([]);
     const [pageContent, setPageContent] = useState();
     useEffect(() => {
+        console.log("tag check", props.content)
         if(props.open && tag.length){
 
             axios.get(breakoutAPI)
