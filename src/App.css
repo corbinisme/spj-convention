@@ -659,7 +659,14 @@ a.qubely-block-btn-anchor, a.qubely-block-btn-anchor:link{
 .qubely-block-btn-anchor:hover {
   color: #eee;
 }
+.breakout em {
+  font-weight: normal;
+  font-style: normal
+}
 
+.lcp_excerpt {
+  font-size: 1.3em;
+}
 
 .page-id-308 .breakout_list
 .page-id-308 .breakout_list {

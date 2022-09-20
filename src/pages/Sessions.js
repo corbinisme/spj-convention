@@ -8,10 +8,11 @@ import Session from "../components/Session"
 
 export default function Sessions (props){
     const [sessions, getSessions] = useState([]);
-    const scheduleAPI = 'https://mediafest22.org/wp-json/wp/v2/posts?_embed&per_page=100&filter[orderby]=created&order=asc';
+    const scheduleAPI = 'https://mediafest22.org/wp-json/wp/v2/posts?_embed&per_page=100&filter[orderby]=created&order=asc&time=2';
     let dateArray = []
     
     useEffect(() => {
+
         axios.get(scheduleAPI)
           .then((response) => {
 

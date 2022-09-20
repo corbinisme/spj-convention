@@ -23,12 +23,12 @@ function Session(props){
         endHour-=12
         endAMPM = "PM";
     }
-    let title= props.content.title.rendered.replace('&#038;', ' - ');
-    title = title.replace("&#8211;", " - ");
-    title = title.replace("&#8217;", "'");
+    let title= props.content.title.rendered.replaceAll('&#038;', ' - ');
+    title = title.replaceAll("&#8211;", " - ");
+    title = title.replaceAll("&#8217;", "'");
 
     let sessionTags = (props.content.tags.length>0? props.content.tags[0]: null)
-    console.log("session tags", sessionTags)
+
     const toggleOpen = function(e){
         e.preventDefault();
 

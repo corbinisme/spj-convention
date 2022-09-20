@@ -11,9 +11,9 @@ export default function Sponsors (props){
           .then((response) => {
 
             let filters = response.data.filter(function(t){return t.categories.includes(46)})
-            console.log("filters", response.data)
+   
             response.data.forEach(function(el){
-                console.log(el.title.rendered, el.categories);
+             
             })
             getPost(filters);
 

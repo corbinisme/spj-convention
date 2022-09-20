@@ -12,7 +12,7 @@ export default function Shop (){
           .then((response) => {
 
             let filters = response.data.filter(function(t){return t.categories.includes(31)})
-            console.log("shop", filters)
+
             setPost(filters);
            
             });

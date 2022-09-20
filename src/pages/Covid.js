@@ -18,7 +18,7 @@ export default function Registration (props){
 
             getPost(filters);
             window.scrollTo(0, 0);
-            console.log(filters)
+     
             //getPost()
             });
         }, []);

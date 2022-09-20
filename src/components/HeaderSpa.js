@@ -39,9 +39,9 @@ class HeaderSpa extends React.Component{
                 navbar
             >
                  <NavItem>
-                    <NavLink className={(this.props.page=='schedule'?"active":"")}
+                    <NavLink className={(this.props.page=='sessions'?"active":"")}
                             onClick={() => this.props
-                            .updateState('schedule',true)}>
+                            .updateState('sessions',true)}>
                     Schedule
                     </NavLink>
                 </NavItem>

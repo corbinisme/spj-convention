@@ -10,11 +10,21 @@ function Breakouts(props){
         tagInt = tag[0];
        
     }
-    const breakoutAPI = 'https://mediafest22.org/wp-json/wp/v2/posts?_embed&per_page=100&filter[orderby]=created&order=asc';
+    //const breakoutAPI = 'https://mediafest22.org/wp-json/wp/v2/posts?_embed&per_page=100&filter[orderby]=created&order=asc';
+    const breakoutAPI = 'https://mediafest22.org/wp-json/wp/v2/posts?per_page=100&categories=25';
     const [breakouts, getBreakouts] = useState([]);
     const [pageContent, setPageContent] = useState();
     useEffect(() => {
-        console.log("tag check", props.content)
+
+        if ("caches" in window) {
+            caches.keys().then((names) => {
+              names.forEach((name) => {
+                caches.delete(name);
+              });
+            });
+        }
+
+       
         if(props.open && tag.length){
 
             axios.get(breakoutAPI)
@@ -33,7 +43,7 @@ function Breakouts(props){
         } else {
             
                 // no tag
-                console.log("no tag", props.content.content, breakouts)
+                
 
                 setPageContent(props.content.content.rendered);
             
@@ -67,10 +77,14 @@ function Breakout(props) {
 
     let body = (props.content.content.rendered? props.content.content.rendered : "");
 
+    let title = props.content.title.rendered;
+    title = title.replace("&#038;", " - ");
+    title = title.replaceAll("&#8211;", " - ");
+    title = title.replaceAll("&#8217;", "'");
     let featured = (props.content.qubely_featured_image_url? props.content.qubely_featured_image_url.large[0]: "");
     return(
         <div className="breakout card p-4 mb-4">
-            <h3>{props.content.title.rendered}</h3>
+            <h3>{title}</h3>
             <p>
                 <strong dangerouslySetInnerHTML={{__html: props.content.acf.presenter}}>
                     
@@ -84,7 +98,7 @@ function Breakout(props) {
                 <div className="col-sm-9">
                        
 
-                    <div dangerouslySetInnerHTML={{__html: body}}></div>
+                    <div className="lcp_excerpt" dangerouslySetInnerHTML={{__html: body}}></div>
                 </div>
             </div>
 

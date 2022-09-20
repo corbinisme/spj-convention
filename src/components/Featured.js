@@ -11,7 +11,7 @@ export default function Featured (props){
           .then((response) => {
 
             let filters = response.data.filter(function(t){return t.categories.includes(29)})
-            console.log("filters", filters)
+
             getPost(filters);
   
             });
