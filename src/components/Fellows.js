@@ -6,7 +6,7 @@ import Banner from "../components/Banner";
 
 export default function Fellows (){
     const [post, getPost] = useState([]);
-    const speakerAPI = 'https://mediafest22.org/wp-json/wp/v2/posts?_embed&per_page=100';
+    const speakerAPI = 'https://mediafest22.org/wp-json/wp/v2/posts?_embed&per_page=100&categories=7';
 
     useEffect(() => {
 

@@ -27,6 +27,38 @@ No matter where you are in your career - an undergrad student journalist, a mid-
            <p>
 Keep checking back for more details as events and sessions are added and follow #MediaFest22 on social media for all the latest information. We can't wait to see you in D.C. this October!
            </p>
+
+          <hr className="star" /><br />
+
+           <div className="bg-light p-4">
+            <h3 className="has-text-align-center">Opening Night Reception</h3>
+            <p><em>This event is included in the SPJ registration. Non-SPJ conference attendees can purchase a ticket as space allows.</em></p>
+            <p>Experience DC from a whole new perspective. With your choice of dining or sightseeing adventures, the nation's capital has never been more exciting. Upon boarding, you'll be escorted to your private table by our attentive onboard crew, where you'll enjoy freshly prepared menu items as you cruise against the city's outstanding memorials and scenery.</p>
+            <div className="row">
+                <div className="col-sm-6">
+                    <strong>
+                <p>Boarding: 06:00 PM<br />
+            Cruising: 07:00 PM-10:00 PM<br />
+            Vessel: Odyssey DC<br />
+            Departing: Pier 4<br />
+            <em>580 Water St SW, Washington, DC<br />
+            20024, USA</em>
+            <br />Disembarking: Pier 4<br />
+            <em>580 Water St SW, Washington, DC<br />20024, USA</em></p>
+            </strong>
+                </div>
+                <div className="col-sm-6">
+                    <figure className="wp-block">
+                    <img width="100%" height="auto" 
+                        src="https://mediafest22.org/wp-content/uploads/2022/07/wharf-waterfront_odysseycruises_1800x1200-1024x683.jpg"  />
+                        
+                    </figure>
+                </div>
+            </div>
+            
+           
+        
+        </div>
         </div>
 
     );

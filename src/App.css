@@ -582,7 +582,47 @@ body .styles_scroll-to-top__2A70v {
 .breakout img {
   width: 100%;
 }
+body .navbar-light .navbar-nav .nav-link {
+  color: #fff;
+  font-size: 1.3em;
+}
 
+body .navbar-light .navbar-nav .nav-link.active {
+  color:  #fec503;
+}
+.navbar-nav li a {
+  position: relative;
+}
+.navbar-nav li a::after {
+  position: absolute;
+    content: "";
+    display: block;
+    margin: 0 auto;
+    width: 0;
+    height: 2px;
+    transition: opacity .3s ease,width .3s ease;
+    right: 0;
+    left: 0;
+    pointer-events: none;
+    background-color: #fec503;
+}
+.navbar-nav li a:hover::after {
+  width: 100%;
+}
+.nav-item {
+  padding: 0 0.3em;
+}
+.otter-masonry {
+  display: none;
+}
+
+.wp-block-media-text__media {
+  background-size: cover
+}
+.wp-block-media-text__media img {
+  visibility: hidden;
+  height: 600px;
+}
 .alignfull {
   width: 100vw;
   max-width: 100vw;
@@ -641,12 +681,30 @@ body .styles_scroll-to-top__2A70v {
 }
 
 
+
+.sessionBody {
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
 .shopspj {
   background-image: url("https://shop-spj.myspreadshop.com/101119712/shopData/images/teaser/Shop-SPJ_Header_11120x400_Gradient_fune1d.svg");
   background-size: cover;
   min-height: 450px;
 }
 
+.appLink a {
+  display: inline-block;
+  padding: 1em;
+  background: #26486c;
+  color: #fff!important;
+  border-radius: 10px;
+  box-shadow: 0 0 19px 2px #333;
+  margin-top: 1em;
+  font-size: 1.4em;
+  text-decoration: none;
+
+}
 
 a.qubely-block-btn-anchor, a.qubely-block-btn-anchor:link{
   display: inline-block;

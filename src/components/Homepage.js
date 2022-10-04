@@ -3,6 +3,7 @@ export default function Hero(props) {
 
 
     return (
+        <>
         <div className="homepage_content mt-4 pt-4">
            <h2>#mediafest22</h2>
             <h3 className="text-bold text-center mb-4 mt-4">
@@ -25,6 +26,11 @@ export default function Hero(props) {
         </h4>
         </div>
 
+
+        <hr />
+
+        
+</>
     );
 
 }

@@ -74,7 +74,7 @@ class HeaderSpa extends React.Component{
                     <NavLink className={(this.props.page=='travel'?"active":"")}
                             onClick={() => this.props
                             .updateState('travel',true)}>
-                    Travel
+                    Hotel
                     </NavLink>
                 </NavItem>
 
@@ -94,6 +94,14 @@ class HeaderSpa extends React.Component{
                             onClick={() => this.props
                             .updateState('presenters',true)}>
                     Presenters
+                    </NavLink>
+                </NavItem>
+
+                <NavItem>
+                    <NavLink className={(this.props.page=='exhibitors'?"active":"")}
+                            onClick={() => this.props
+                            .updateState('exhibitors',true)}>
+                    Exhibitors
                     </NavLink>
                 </NavItem>
 

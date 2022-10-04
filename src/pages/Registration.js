@@ -5,28 +5,25 @@ import { Helmet, HelmetProvider } from 'react-helmet-async';
 import Register from "../components/Register"
 
 export default function Registration (props){
-    const [post, getPost] = useState([]);
-    const scheduleAPI = 'https://mediafest22.org/wp-json/wp/v2/pages';
-    
-    
-    useEffect(() => {
-        axios.get(scheduleAPI)
-          .then((response) => {
-
-            let filters = response.data.filter((t=>t.slug == "registration"))
-
-            getPost(filters);
-            window.scrollTo(0, 0);
-
-            });
-        }, []);
+   
       
 
     return (
         <div className="container"> 
             <Banner title="Registration" />
             <Register />
-            
+
+            <HelmetProvider>
+                <Helmet>
+                    <title>Registration - mediafest22</title>
+                    <meta property="og:description" content="Click the link below to register for Mediafest22 EARLY BIRD RATES (BY OCTOBER 4)" />
+                    <meta property="og:image" content="https://mediafest22.org/wp-content/uploads/2022/01/logoCrop.png" />
+                    <meta property="og:image:height" content="1486" class="yoast-seo-meta-tag" />
+	                <meta property="og:image:type" content="image/png" class="yoast-seo-meta-tag" />
+                    
+                </Helmet>
+
+            </HelmetProvider>
         </div>
     );
 }

@@ -5,7 +5,7 @@ import axios from "axios";
 
 export default function Shop (){
     const [post, setPost] = useState([]);
-    const speakerAPI = 'https://mediafest22.org/wp-json/wp/v2/posts?_embed&per_page=100';
+    const speakerAPI = 'https://mediafest22.org/wp-json/wp/v2/posts?_embed&per_page=100&categories=31';
 
     useEffect(() => {
         axios.get(speakerAPI)

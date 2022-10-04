@@ -17,6 +17,8 @@ import Covid from './Covid';
 import Registration from './Registration';
 import Presenters from './Presenters';
 import Sessions from './Sessions';
+import Exhibitors from "./Exhibitors";
+import AllSessions from "./AllSessions";
 
 import HeaderSpa from  "../components/HeaderSpa";
 import Footer from  "../components/Footer";
@@ -60,7 +62,8 @@ class Single extends React.Component {
             travel: Travel,
             schedule: Schedule,
             presenters: Presenters,
-            sessions: Sessions
+            sessions: Sessions,
+            exhibitors: Exhibitors
         }
 
         const Comp = componentLookup[this.state.page.toLowerCase()];
@@ -115,7 +118,9 @@ function Single2(props){
         travel: Travel,
         schedule: Schedule,
         presenters: Presenters,
-        sessions: Sessions
+        sessions: Sessions,
+        exhibitors: Exhibitors,
+        allsessions: AllSessions
     }
 
     const Comp = componentLookup[page.toLowerCase()];

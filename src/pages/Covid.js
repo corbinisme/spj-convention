@@ -7,7 +7,7 @@ import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 export default function Registration (props){
     const [post, getPost] = useState([]);
-    const scheduleAPI = 'https://mediafest22.org/wp-json/wp/v2/pages';
+    const scheduleAPI = 'https://mediafest22.org/wp-json/wp/v2/pages?_embed&per_page=50';
     
     
     useEffect(() => {

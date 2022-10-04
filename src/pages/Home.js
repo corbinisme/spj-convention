@@ -4,9 +4,12 @@ import Hero from "../components/Hero";
 import Homepage from "../components/Homepage";
 import Welcometext from "../components/Welcometext";
 import Presenter from "../components/Presenter";
+import Woodward from "../components/Woodward";
+import Fellows from "../components/Fellows";
 import Featured from "../components/Featured";
 import Register from "../components/Register"
 import Shop from "../components/Shop";
+import AppLink from "../components/AppLink";
 import axios from "axios";
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -27,8 +30,9 @@ export default function Home (props){
           .then((response) => {
 
             let filters = response.data.filter(function(t){return t.categories.includes(25)})
+            let limit = filters.slice(0, 15);
 
-            getPost(filters);
+            getPost(limit);
 
             });
         }, []);
@@ -38,22 +42,31 @@ export default function Home (props){
             <Hero title="MediaFest22" />
 
             <Homepage />  
-            <hr className="star" />
-            <div className="text-center fellows_blurb">
-                <button  onClick={() => props
-                .updateState('speakers')}>
-                    <img 
-                    src="https://mediafest22.org/wp-content/uploads/2022/06/Fellows-Social-Card-2022-768x768.png" 
-                    alt="2022 Fellows of the Society" />
-                </button>
-            </div>
+            <AppLink />
+            
             <hr className="star" />
             <Welcometext />
             <hr className="star" />
 
                     <section className="presenters">
                         <h2>Featured Presenters</h2><br />
-                        <Presenter />
+                        <div className="row">
+                            <div className="col-sm-12 keynotes">
+                            <Presenter />
+                            </div>
+                            <div className="col-sm-12">
+                            <Woodward />
+                            </div>
+                            <div className="text-center fellows_blurb">
+                                <button  onClick={() => props
+                                .updateState('speakers')}>
+                                    <img 
+                                    src="https://mediafest22.org/wp-content/uploads/2022/06/Fellows-Social-Card-2022-768x768.png" 
+                                    alt="2022 Fellows of the Society" />
+                                </button>
+                            </div>
+                        </div>
+                       
                     </section>
             <hr className="star" />
 
@@ -118,6 +131,15 @@ export default function Home (props){
 
 
             </Swiper>
+
+                <div className="text-center">
+                <button className="btn btn-primary btn-lg"  onClick={() => props
+                    .updateState('allsessions')}>
+                        View All Sessions
+                </button>
+                </div>
+
+                <hr className="star" />
             </div>
             </section>
 
